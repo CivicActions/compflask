@@ -2,9 +2,6 @@
     <div class="navbar-menu">
         <div class="navbar-start">
             <a href="{{ url_for('index') }}" class="navbar-item">Home</a>
-            {% if current_user.is_authenticated %}
-            <a href="{{ url_for('page.profile') }}" class="navbar-item">Profile</a>
-            {% endif %}
         </div>
 
         <div class="navbar-end">
@@ -13,6 +10,7 @@
             <a href="{{ url_for('auth.register') }}" class="navbar-item">Sign Up</a>
             {% endif %}
             {% if current_user.is_authenticated %}
+            <a href="{{ url_for('page.profile') }}" class="navbar-item">Profile</a>
             <a href="{{ url_for('auth.logout') }}" class="navbar-item">Logout</a>
             {% endif %}
         </div>
