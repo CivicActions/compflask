@@ -10,7 +10,8 @@ exclude: |
     opencontrol/.*|
     parser/.*|
     scripts/.*|
-    util/.*
+    util/.* |
+    app/static/node_packages/.*
   )$
 
 repos:

@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "comptools"
+name = "compflask"
 version = "0.1.0"
-description = ""
+description = "A Flask app for compliance tasks."
 authors = ["Tom Camp <tom.camp@civicactions.com>"]
 
 [tool.poetry.dependencies]

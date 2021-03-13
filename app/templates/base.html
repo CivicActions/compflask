@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <header>
+    {% include 'menu/main_menu.html' %}
+    </header>
+    <h1>{{ title }}<h1>
+    <section class="content">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+        <article class="message {{ category }}">
+            <div class="message-body">{{ message }}</div>
+        </article>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    </section>
+    {% include 'footer.html' %}
+  </div>
+</section>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://kit.fontawesome.com/86f34da8fc.js" crossorigin="anonymous"></script>
+</body>
+</html>
